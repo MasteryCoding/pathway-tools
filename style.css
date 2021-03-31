@@ -1,0 +1,192 @@
+body {
+  background-image: url(https://wallpaperaccess.com/full/1526422.jpg);
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color:#3250a3d3;
+  border: solid 2px white;
+  display: inline-block;
+  height: 650px;
+}
+
+.title {
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+}
+
+.fas {
+  font-size: 8px;
+  padding: 3px;
+  vertical-align: middle;
+  color: rgba(255,255,255,40%);
+}
+
+.status-icon {
+  color: white;
+  padding: 3px 5px;
+  /* float: right; */
+  vertical-align: middle;
+
+}
+
+.fa-plus:hover {
+  color: green;
+  cursor: pointer;
+}
+
+.fa-minus:hover {
+  color: red;
+  cursor: pointer;
+}
+
+
+#roster-container {
+  width: 300px;
+  vertical-align: top;
+  position: relative;
+}
+
+#roster-head {
+  height: 40px;
+  padding-top: 10px;
+  border-bottom: 2px solid white;
+}
+
+#roster-body {
+  overflow-y: scroll;
+  height: 525px;
+}
+
+#roster-footer {
+  height: 70px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: solid 2px white;
+}
+
+.roster-player-row {
+  border-bottom: 1px solid white;
+  text-align: left;
+  padding: 5px 2px;
+}
+
+.inactive {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.name-label {
+  display: inline-block;
+  margin: 2px 4px;
+}
+
+#teams-container {
+  max-width: 800px;
+  min-width: 600px;
+  vertical-align: top;
+  position: relative;
+}
+
+#teams-head {
+  height: 40px;
+  padding-top: 10px;
+  border-bottom: 2px solid white;
+}
+
+#teams-body {
+  overflow-y: scroll;
+  max-height: 600px;
+}
+
+.team {
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 20px;
+}
+
+.team-head {
+  margin: 0;
+  
+}
+
+.team-body {
+  border: solid 1px white;
+  text-align: left;
+  padding: 10px 10px;
+}
+
+.roomCode {
+  background: none;
+  border: none;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.roomCode::placeholder {
+  color: white;
+}
+
+.roomCode:focus::placeholder {
+  color: transparent;
+}
+
+.roomCode:focus {
+  border: none;
+  outline: none;
+}
+
+.main-button {
+  display: block;
+  height: 45px;
+  width: 120px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  left: 50%;
+  margin-left: -60px;
+  background: #26444B;
+  border: 1px solid white;
+  border-radius: 5%;
+  color: white;
+  cursor: pointer;
+  line-height: 45px;
+}
+
+
+#csv-upload {
+  visibility: hidden;
+  width: 0;
+}
+
+.leader {
+  color: orange;
+}
+
+.team-count {
+  padding: 15px;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.team-count:hover {
+  color: orange;
+}

@@ -1,0 +1,35 @@
+.campers-table {
+  display: grid;
+  width: 700px;
+  grid-template-columns: auto auto auto;
+  border: 1px solid black;
+  border-bottom: none;
+}
+
+
+.campers-table > div:nth-child(-n+3) {
+  background-color: aliceblue;
+}
+.campers-table > div {
+  border-bottom: 1px solid black;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#container > div {
+  margin: 30px;
+}
+
+a {
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 1600px) {
+  #container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
