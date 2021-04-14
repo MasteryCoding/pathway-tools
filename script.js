@@ -256,13 +256,12 @@ const displayTeams = () => {
     teamNode.appendChild(headNode);
     
     const headingNode = document.createElement("span");
-    headingNode.innerHTML = `Team ${i + 1} | `;
+    headingNode.innerHTML = `Team ${i + 1}`;
     headNode.appendChild(headingNode);
 
-    const teamSkillNode = document.createElement("span");
-    teamSkillNode.innerHTML = team.skill;
-    headNode.appendChild(teamSkillNode);
-
+    // const teamSkillNode = document.createElement("span");
+    // teamSkillNode.innerHTML = team.skill;
+    // headNode.appendChild(teamSkillNode);
 
     const bodyNode = document.createElement("div");
     bodyNode.classList.add('team-body');
@@ -270,16 +269,16 @@ const displayTeams = () => {
       const playerDiv = document.createElement("div");
       headNode.classList.add("team-player-row");
       playerDiv.innerText = `${i + 1}. ${p.name} - ${p.discord}`;
-      if (p.skillNote == SKILL_NOTE.PLUS){
-        const plus = document.createElement("span");
-        plus.classList.add("fas", "fa-plus", "status-icon");
-        playerDiv.appendChild(plus);
-      }
-      if (p.skillNote == SKILL_NOTE.MINUS){
-        const minus = document.createElement("span");
-        minus.classList.add("fas", "fa-minus", "status-icon");
-        playerDiv.appendChild(minus);
-      }
+      // if (p.skillNote == SKILL_NOTE.PLUS){
+      //   const plus = document.createElement("span");
+      //   plus.classList.add("fas", "fa-plus", "status-icon");
+      //   playerDiv.appendChild(plus);
+      // }
+      // if (p.skillNote == SKILL_NOTE.MINUS){
+      //   const minus = document.createElement("span");
+      //   minus.classList.add("fas", "fa-minus", "status-icon");
+      //   playerDiv.appendChild(minus);
+      // }
       if (p.isOnPC) {
         const desktop = document.createElement("span");
         desktop.classList.add("fas", "fa-desktop", "status-icon");
@@ -294,7 +293,7 @@ const displayTeams = () => {
 
 // const generateRosterDownload = (cohort, week) => {
 //   // Create column names
-//   const rows = [["Name", "Leader", "Email", "Platform"]];
+//   const rows = [["Name", "Email", "Platform"]];
 //   // Create camper columns
 //   cohort.campers.forEach((camper) => {
 //     rows.push([camper.name, 0, camper.guardian_email, camper.platform]);
