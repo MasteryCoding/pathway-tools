@@ -131,6 +131,7 @@ const generateTeams = () => {
   (() => {
     const plusPlayers = [];
     const minusPlayers = [];
+    console.log(skillUsers)
     skillUsers.forEach((p) => {
       if (p.skillNote == SKILL_NOTE.PLUS) plusPlayers.push(p);
       if (p.skillNote == SKILL_NOTE.MINUS) minusPlayers.push(p);
@@ -140,13 +141,14 @@ const generateTeams = () => {
     for (let i =  0; i < max; i++) {
       if (plusPlayers.length) evenlyDistributedSkillUsers.push(plusPlayers.pop());
       if (minusPlayers.length) evenlyDistributedSkillUsers.push(minusPlayers.pop());
+      if (!plusPlayers.length && !minusPlayers.length) break;
     }
     skillUsers = evenlyDistributedSkillUsers;
     
   })();
 
   // If not enough PC players, set a flag
-  FLAGS.insufficientPCs = PCUsers.length > teamCount;
+  FLAGS.insufficientPCs = PCUsers.length < teamCount;
 
   // Initialize all teams as equal
   for (let i = 0; i < teamCount; i++) {
@@ -196,7 +198,10 @@ const generateTeams = () => {
     return true;
   }
   const tryToAssignToOpenTeam = (player, teams = TEAMS) => {
-    const team = teams.find(team => team.players.length < TEAM_SIZE);
+    let team = teams.find(team => (team.skill === 0) && (team.players.length < TEAM_SIZE));
+    if (!team) {
+      team = teams.find(team => (team.players.length < TEAM_SIZE));
+    }
     if (!team) return false;
     team.addPlayer(player);
     return true;
@@ -204,13 +209,12 @@ const generateTeams = () => {
 
   // First Fill PC Users
   PCUsers.forEach((player) => {
-    if (!tryToAssignToNoPC(player)) {
-      if (player.skillNote == 0) {
-        filler.push(player);
-      }
-      else {
-        skillUsers.push(player);
-      }
+    if (tryToAssignToNoPC(player)) return;
+    if (player.skillNote == 0) {
+      filler.push(player);
+    }
+    else {
+      skillUsers.push(player);
     }
   });
 
